@@ -1,0 +1,124 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+#header {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    height: calc(100vh - 80px); /* Adjust height based on header */
+}
+
+#input-panel {
+    width: 100%; /* Full width on top */
+    padding: 10px 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#input-panel form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#graph-container {
+    flex: 3; /* Takes 3 parts of available space */
+    min-width: 300px; /* Minimum width */
+    margin: 0 10px 10px 20px; /* Top, Right, Bottom, Left */
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+#graph-container h2 {
+    padding: 10px;
+    margin: 0;
+    border-bottom: 1px solid #eee;
+}
+
+#cy {
+    flex-grow: 1; /* Make Cytoscape container fill available space */
+    min-height: 300px; /* Minimum height if flex breaks */
+    /* A fixed height or flex-grow is needed for Cytoscape to render */
+}
+
+
+#sidebar {
+    flex: 1; /* Takes 1 part of available space */
+    min-width: 250px; /* Minimum width */
+    max-width: 400px; /* Maximum width */
+    margin: 0 20px 10px 10px; /* Top, Right, Bottom, Left */
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Make sidebar scrollable */
+}
+
+ #sidebar h2, #sidebar h3 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+#sidebar h3:first-child {
+    margin-top: 0;
+}
+
+#node-details p {
+    white-space: pre-wrap; /* Preserve line breaks in node info */
+}
+
+#risky-paths ul {
+    list-style: none;
+    padding: 0;
+}
+
+#risky-paths li {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    cursor: pointer; /* Indicate clickable paths (future feature?) */
+}
+
+ #risky-paths li:hover {
+     background-color: #e9e9e9;
+ }
+
+
+.hidden {
+    display: none;
+}
+
+#loading {
+    color: #0056b3;
+    font-weight: bold;
+}
+
+#error {
+    color: #d9534f;
+    font-weight: bold;
+}
+
+/* Cytoscape.js Styles (defined in script.js, but putting notes here) */
+/* Nodes: Shape, color based on type, border/color based on anomaly */
+/* Edges: Arrows, maybe color based on type if available */

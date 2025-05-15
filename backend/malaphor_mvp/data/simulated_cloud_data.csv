@@ -1,0 +1,10 @@
+source_id,source_type,target_id,target_type,relationship_type,timestamp,feature1,feature2
+user_1,user,vm_a,resource,accesses,1678886400,10,0.5
+user_1,user,s3_b,resource,accesses,1678886460,5,0.2
+user_2,user,db_c,resource,accesses,1678886500,15,0.8
+vm_a,resource,sg_x,config,is_member_of,1678886550,1,0
+s3_b,resource,policy_p1,config,has_policy,1678886600,1,0
+user_3_anomalous,user,db_c,resource,accesses,1678887000,50,0.9
+vm_a,resource,vm_d,resource,network_conn,1678887100,100,0.1
+user_1,user,vm_d,resource,accesses,1678887150,8,0.4
+user_3_anomalous,user,sg_y,config,modifies,1678887200,1,1.0

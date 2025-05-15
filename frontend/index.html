@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Malaphor Cloud Security Graph</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="lib/cytoscape.min.js"></script>
+</head>
+<body>
+    <div id="header">
+        <h1>Malaphor Cloud Security Graph & Threat Paths</h1>
+    </div>
+
+    <div id="container">
+        <div id="input-panel">
+            <h2>Upload Cloud Data (CSV)</h2>
+            <form id="upload-form">
+                <input type="file" id="csvFile" accept=".csv" required>
+                <button type="submit">Analyze</button>
+            </form>
+            <div id="loading" class="hidden">Processing...</div>
+            <div id="error" class="hidden"></div>
+        </div>
+
+        <div id="graph-container">
+             <h2>Cloud Graph</h2>
+             <div id="cy"></div>
+        </div>
+
+        <div id="sidebar">
+            <h2>Analysis Results</h2>
+            <div id="node-details">
+                <h3>Selected Node Details:</h3>
+                <p id="node-info">Click on a node to see details.</p>
+            </div>
+             <div id="risky-paths">
+                <h3>Top Risky Paths:</h3>
+                <ul id="path-list">
+                    <!-- Risky paths will be listed here -->
+                     <li>Upload data to see paths.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+    <!-- <script src="lib/cytoscape.min.js"></script> -->
+</body>
+</html>

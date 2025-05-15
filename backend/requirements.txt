@@ -1,0 +1,8 @@
+Flask==3.0.3
+Flask-Cors==4.0.1
+pandas==2.2.2 # Or version you were using
+torch==2.3.0 # Or version you were using
+torch_geometric==2.5.2 # Or version you were using
+scikit-learn==1.5.0 # Or version you were using
+networkx==3.3 # Or version you were using
+# Add any other dependencies from your previous requirements
