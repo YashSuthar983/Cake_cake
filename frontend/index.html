@@ -1,8 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Malaphor Cloud Security Graph - Visualize and analyze cloud security threats">
     <title>Malaphor Cloud Security Graph</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="lib/cytoscape.min.js"></script>
 </head>
 <body>
@@ -22,27 +28,25 @@
         </div>
 
         <div id="graph-container">
-             <h2>Cloud Graph</h2>
-             <div id="cy"></div>
+            <h2>Cloud Graph</h2>
+            <div id="cy"></div>
         </div>
 
         <div id="sidebar">
             <h2>Analysis Results</h2>
             <div id="node-details">
-                <h3>Selected Node Details:</h3>
+                <h3>Selected Node Details</h3>
                 <p id="node-info">Click on a node to see details.</p>
             </div>
-             <div id="risky-paths">
-                <h3>Top Risky Paths:</h3>
+            <div id="risky-paths">
+                <h3>Top Risky Paths</h3>
                 <ul id="path-list">
-                    <!-- Risky paths will be listed here -->
-                     <li>Upload data to see paths.</li>
+                    <li>Upload data to see paths.</li>
                 </ul>
             </div>
         </div>
     </div>
 
     <script src="scripts.js"></script>
-    <!-- <script src="lib/cytoscape.min.js"></script> -->
 </body>
 </html>
