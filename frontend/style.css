@@ -1,122 +1,214 @@
+/* Modern CSS Reset and Variables */
+:root {
+    --primary-color: #2563eb;
+    --primary-dark: #1d4ed8;
+    --secondary-color: #64748b;
+    --background-color: #f8fafc;
+    --card-background: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --radius-md: 0.375rem;
+    --transition: all 0.2s ease-in-out;
+}
+
 body {
-    font-family: sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    line-height: 1.5;
 }
 
 #header {
-    background-color: #0056b3;
+    background-color: var(--primary-color);
     color: white;
-    padding: 10px 20px;
+    padding: 1.5rem 2rem;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-md);
+}
+
+#header h1 {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 600;
 }
 
 #container {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    height: calc(100vh - 80px); /* Adjust height based on header */
+    flex-wrap: wrap;
+    height: calc(100vh - 100px);
+    padding: 0 1.5rem;
+    gap: 1.5rem;
 }
 
 #input-panel {
-    width: 100%; /* Full width on top */
-    padding: 10px 20px;
-    box-sizing: border-box;
-    background-color: #fff;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 100%;
+    padding: 1.5rem;
+    background-color: var(--card-background);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+#input-panel h2 {
+    margin: 0 0 1rem 0;
+    color: var(--text-primary);
+    font-size: 1.25rem;
 }
 
 #input-panel form {
     display: flex;
-    gap: 10px;
+    gap: 1rem;
     align-items: center;
 }
 
+#input-panel input[type="file"] {
+    padding: 0.5rem;
+    border: 2px dashed var(--border-color);
+    border-radius: var(--radius-md);
+    background-color: var(--background-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#input-panel input[type="file"]:hover {
+    border-color: var(--primary-color);
+}
+
+#input-panel button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+#input-panel button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
 #graph-container {
-    flex: 3; /* Takes 3 parts of available space */
-    min-width: 300px; /* Minimum width */
-    margin: 0 10px 10px 20px; /* Top, Right, Bottom, Left */
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex: 3;
+    min-width: 300px;
+    background-color: var(--card-background);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 #graph-container h2 {
-    padding: 10px;
+    padding: 1rem 1.5rem;
     margin: 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-size: 1.25rem;
 }
 
 #cy {
-    flex-grow: 1; /* Make Cytoscape container fill available space */
-    min-height: 300px; /* Minimum height if flex breaks */
-    /* A fixed height or flex-grow is needed for Cytoscape to render */
+    flex-grow: 1;
+    min-height: 300px;
+    background-color: var(--background-color);
 }
-
 
 #sidebar {
-    flex: 1; /* Takes 1 part of available space */
-    min-width: 250px; /* Minimum width */
-    max-width: 400px; /* Maximum width */
-    margin: 0 20px 10px 10px; /* Top, Right, Bottom, Left */
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 10px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+    background-color: var(--card-background);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    padding: 1.5rem;
     box-sizing: border-box;
-    overflow-y: auto; /* Make sidebar scrollable */
+    overflow-y: auto;
 }
 
- #sidebar h2, #sidebar h3 {
-    border-bottom: 1px solid #eee;
-    padding-bottom: 5px;
-    margin-top: 15px;
-    margin-bottom: 10px;
+#sidebar h2, #sidebar h3 {
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
 }
 
-#sidebar h3:first-child {
-    margin-top: 0;
+#sidebar h3 {
+    font-size: 1.1rem;
+    margin-top: 1.25rem;
 }
 
 #node-details p {
-    white-space: pre-wrap; /* Preserve line breaks in node info */
+    white-space: pre-wrap;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 #risky-paths ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 #risky-paths li {
-    background-color: #f9f9f9;
-    border: 1px solid #eee;
-    margin-bottom: 8px;
-    padding: 8px;
-    border-radius: 4px;
-    font-size: 0.9em;
-    cursor: pointer; /* Indicate clickable paths (future feature?) */
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
- #risky-paths li:hover {
-     background-color: #e9e9e9;
- }
-
+#risky-paths li:hover {
+    background-color: #f1f5f9;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
 
 .hidden {
     display: none;
 }
 
 #loading {
-    color: #0056b3;
-    font-weight: bold;
+    color: var(--primary-color);
+    font-weight: 500;
+    padding: 0.5rem 0;
 }
 
 #error {
-    color: #d9534f;
-    font-weight: bold;
+    color: #dc2626;
+    font-weight: 500;
+    padding: 0.5rem 0;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
 }
 
 /* Cytoscape.js Styles (defined in script.js, but putting notes here) */
